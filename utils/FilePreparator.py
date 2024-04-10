@@ -1,8 +1,15 @@
-RNA_sequence_1 = open("C:/Users/Lorenz/Machine Learning/Interactive-learning/RNA_sequence_1.fasta", "r")
-RNA_sequence_2 = open("C:/Users/Lorenz/Machine Learning/Interactive-learning/RNA_sequence_2.fasta", "r")
-RNA_sequence_1 = RNA_sequence_1.read()              # read the file
-RNA_sequence_2 = RNA_sequence_2.read()              # read the file
-RNA_sequence_1 = RNA_sequence_1.replace("\n", "")   # remove newline characters
-RNA_sequence_2 = RNA_sequence_2.replace("\n", "")   # remove newline characters 
-RNA_sequence_1 = RNA_sequence_1.split('[ARN]')[1]   # remove the first part of the sequence
-RNA_sequence_2 = RNA_sequence_2.split('[ARN]')[1]   # remove the first part of the sequence
+def prepare_file(filename):
+    file = open(f"./utils/{filename}.fasta", "r")
+    file = file.read()              # read the file
+    file = file.replace("\n", "")   # remove newline characters
+    if '[ARN]' in file:
+        file = file.split('[ARN]')[1]
+    if '[ADN]' in file:
+        file = file.split('[ADN]')[1]
+
+    return file
+
+ADN_sequence_1 = prepare_file("ADN_sequence_1")
+ADN_sequence_2 = prepare_file("ADN_sequence_2")
+ARN_sequence_1 = prepare_file("ARN_sequence_1")
+ARN_sequence_2 = prepare_file("ARN_sequence_2")
