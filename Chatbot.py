@@ -2,7 +2,7 @@ import openai
 from IPython.display import display, Markdown
 import json
 
-API_key_file = './API.key.txt'#r'C:\Users\Lorenz\Machine Learning\API.key'
+API_key_file = r'C:\Users\Lorenz\Machine Learning\API.key'#'./API.key.txt'#
 
 class Chatbot:
     def __init__(self, api_key, persona: str, prime_chat: list = []):
@@ -52,7 +52,12 @@ if __name__ == "__main__":
     with open(API_key_file, 'r') as file:
         api_key = file.read().strip()
         
-    persona = "Tu es mon ami robot, qui peut m'expliquer simplement les problèmes les plus difficiles. Ne me dis pas la solution, mais guide-moi pas à pas. Agis comme un coach, sans me dire directement la solution."
+    persona = """Tu es mon ami robot, qui peut m'expliquer avec un langages simple les problèmes les plus difficiles. 
+    je ne sais rien sur le coding avec Python.
+    si je te demande la reponse, ne me dis pas la solution. Pose des questions pour m'aider à trouver la solution moi-même.
+    Si je te demande pour un example, ne jaimais me donne la solution directement. Donne moi des hints, des examples et des analogies de la vie quotidienne.
+    ne me donne jamais la reponse!!!
+    """
     
     """You are an assistant helping students brainstorm to find a solution to a problem. Never give a solution directly, but rather help with hints, examples and analogies from everyday life, like translating a German sentence into English with a dictionary. Here is an example chat:
     User: Hello, can you help me with a Task? I need to find a way to convert a `DNA_sequence` into it's complementaire `DNA_strand_switch_sequence`.
@@ -70,7 +75,7 @@ if __name__ == "__main__":
 
     LehrerGPT = Chatbot(api_key, persona=persona, prime_chat=prime_chat)
     dialogue = LehrerGPT.get_dialogue()
-    print(dialogue)
+    #print(dialogue)
     # Load previous responses
     LehrerGPT.load_chat()
 
