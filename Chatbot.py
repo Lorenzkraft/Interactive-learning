@@ -91,8 +91,8 @@ if __name__ == "__main__":
         response = LehrerGPT.questions(question)
         
         # Print user's question
-        display(Markdown("<span style=\"color:lightgreen\">**You**</span>"), Markdown(question))
+        display(Markdown("<span style=\"color:green\">**You**</span>"), Markdown(question))
         
         # Print bot's response 
 
-        display(Markdown("<span style=\"color:lightblue\">**Chatbot**</span>"), Markdown(response))
+        display(Markdown("<span style=\"color:blue\">**Chatbot**</span>"), Markdown(response))
