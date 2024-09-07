@@ -1,11 +1,11 @@
 # Project overview
-This is a project for educational purpose. It aims to teach students how to transcribe DNA to mRNA using basic python concepts (available in french and english). 
-It facilitates programming beginners the start with python,by including an interactive Chatbot that was created using the OpenAI API.
+This is an educational project. It aims to teach students how to transcribe DNA to mRNA using basic python concepts (available in French and English). 
+It makes it easier for beginners to get started with Python by including an interactive chatbot created using the OpenAI API.
 
 # How To Start
 1. pip install OpenAI API
-2. open the Robofriend.ipynb and the ADN_template.ipynb file in seperate windows
-3. Follow along the instructions in the temaplate. If help is needed you can ask the Robofriend
+2. open the Robofriend.ipynb and ADN_template.ipynb files in separate windows
+3. Follow the instructions in the template. If you need help, you can ask the Robofriend
 
 # Outlook
-To make the project available for students in class, it would be the next step to deploy it on the cloud using AWS or similar.
+To make the project available to students in the classroom, the next step would be to deploy it in the cloud using AWS or similar.
